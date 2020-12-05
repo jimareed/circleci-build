@@ -29,6 +29,6 @@ jobs:
           name: Docker Push
           command: |
             TAG=0.1.$CIRCLE_BUILD_NUM
-            echo $TAG
-            echo $DOCKERHUB_USERNAME
-            echo $DOCKERHUB_PASSWORD
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+            docker tag goapp $DOCKERHUB_USERNAME/circleci-build:$TAG
+            docker push $DOCKERHUB_USERNAME/circleci-build	
