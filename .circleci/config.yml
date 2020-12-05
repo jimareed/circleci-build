@@ -8,12 +8,6 @@ workflows:
 
 jobs:
   build:
-    # pre-built images: https://circleci.com/docs/2.0/circleci-images/
-    docker:
-      - image: circleci/node:10-browsers
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - setup_remote_docker:
