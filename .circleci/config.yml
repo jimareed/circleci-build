@@ -8,6 +8,10 @@ workflows:
 
 jobs:
   build:
+    environment:
+      IMAGE_NAME: jimareed/circleci-build
+    docker:
+      - image: circleci/buildpack-deps:stretch
     steps:
       - checkout
       - setup_remote_docker:
