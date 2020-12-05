@@ -20,7 +20,7 @@ hello world
 docker login
 docker tag goapp mydockerhub-user/circleci-build:initialbuild
 docker push mydockerhub-user/circleci-build
-docker run mydockerhub-user/circleci-build
+docker run mydockerhub-user/circleci-build:initialbuild
 hello world
 ```
 - setup a new project in CircleCi for `circleci-build`
@@ -29,7 +29,6 @@ hello world
 - confirm that the new image is available in Docker Hub
 - try out the new image
 ```
-docker build --tag goapp .
 docker run mydockerhub-user/circleci-build
 hello world
 ```
