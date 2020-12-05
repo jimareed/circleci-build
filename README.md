@@ -24,8 +24,16 @@ docker run mydockerhub-user/circleci-build
 hello world
 ```
 - setup a new project in CircleCi for `circleci-build`
+- add a CircleCi Context `DOCKERHUB_USERNAME` and add two environment variables `DOCKERHUB_USERNAME` and `DOCKERHUB_PASSWORD`
 - build project and verify that the build was successful
 - confirm that the new image is available in Docker Hub
+- try out the new image
+```
+docker build --tag goapp .
+docker run mydockerhub-user/circleci-build
+hello world
+```
+
 
 ## Build app locally (optional)
 ```

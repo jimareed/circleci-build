@@ -31,4 +31,5 @@ jobs:
             TAG=0.1.$CIRCLE_BUILD_NUM
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
             docker tag goapp $DOCKERHUB_USERNAME/circleci-build:$TAG
-            docker push $DOCKERHUB_USERNAME/circleci-build	
+            docker push $DOCKERHUB_USERNAME/circleci-build:$TAG
+            docker push $DOCKERHUB_USERNAME/circleci-build:latest
