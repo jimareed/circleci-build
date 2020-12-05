@@ -9,18 +9,13 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - setup_remote_docker:
       - run:
-          name: The First Step
+          name: Docker Build
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            docker build --tag app_image .
       - run:
-          name: Code Has Arrived
+          name: Docker Run
           command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
-      - run:
-          name: Running in a Unique Container
-          command: |
-            node -v
+            docker run app_image
             
