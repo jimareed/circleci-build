@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/node:10-browsers
         auth:
-          username: $DOCKERHUB_USER
+          username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
@@ -24,7 +24,5 @@ jobs:
           name: Docker Push
           command: |
             TAG=0.1.$CIRCLE_BUILD_NUM
-            docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
-            docker tag goapp $DOCKERHUB_USER/circleci-build:$TAG
-            docker push $DOCKERHUB_USER/circleci-build
-  
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            
