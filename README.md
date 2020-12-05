@@ -1,6 +1,11 @@
 # circleci-build
 Build a docker image with CircleCi. Based on the CircleCI doc [Hello World](https://circleci.com/docs/2.0/hello-world/) and the blog [Using CircleCi Workflows to Replicate Docker Hub Automated Builds](https://circleci.com/blog/using-circleci-workflows-to-replicate-docker-hub-automated-builds/).
 
+## Prerequisites
+- create Dockerhub account
+- create CircleCi account
+- try out CircleCi [Hello World](https://circleci.com/docs/2.0/hello-world/)
+
 ## Setup
 - create new github repo `circleci-build` and copy these files into the repo
 - build and run docker container locally
@@ -18,6 +23,9 @@ docker push mydockerhub-user/circleci-build
 docker run mydockerhub-user/circleci-build
 hello world
 ```
+- setup a new project in CircleCi for `circleci-build`
+- build project and verify that the build was successful
+- confirm that the new image is available in Docker Hub
 
 ## Build app locally (optional)
 ```
